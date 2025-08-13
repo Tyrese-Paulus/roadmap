@@ -1,0 +1,23 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3A2E54;
+}
+
+.center{
+    text-align: center;
+    background-color: #5B5075;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
