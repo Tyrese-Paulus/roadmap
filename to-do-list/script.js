@@ -4,16 +4,19 @@ const item = {
     status: Boolean,
 }
 
+const items = JSON.parse(localStorage.getItem('storedItems')) || [];
 
-const items = JSON.parse(localStorage.getItem('storedItems'));
+function renderArray(){
 
-const displayedItems = document.getElementById('content')
+    const displayedItems = document.getElementById('content')
+    displayedItems.innerHTML = ''
 
-items.forEach(item => {
+    items.forEach(item => {
     const li = document.createElement('li');
     li.textContent = item.title;
     displayedItems.appendChild(li)
 })
+}
 
 function push(){
     const id = Date.now()
@@ -26,5 +29,8 @@ function push(){
 
     items.push(item)
     localStorage.setItem('storedItems', JSON.stringify(items));
-    console.log(items);
+    renderArray()
+    
 }
+
+renderArray()

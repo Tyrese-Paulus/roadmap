@@ -17,7 +17,12 @@ body, html{
 }
 
 .content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.content li {
+    display: block;
+    margin-bottom: 10px;
 }
