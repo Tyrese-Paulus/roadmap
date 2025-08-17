@@ -19,6 +19,17 @@ function renderArray(){
     const deleteBtn = document.createElement('button')
     deleteBtn.textContent = "delete"
     deleteBtn.style.marginLeft = "10px"
+
+    deleteBtn.addEventListener('click', () => {
+        const itemID = item.id;
+        const result = items.find(item => item.id === itemID)
+        if(result !== -1) {
+            items.splice(result, 1)
+        }
+        localStorage.setItem('storedItems', JSON.stringify(items));
+        renderArray()
+    })
+    displayedItems.appendChild(deleteBtn)
 })
 }
 
