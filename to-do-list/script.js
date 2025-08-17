@@ -14,10 +14,10 @@ function renderArray(){
     items.forEach(item => {
     const li = document.createElement('li');
     li.textContent = item.title;
-    displayedItems.appendChild(li)
+    // displayedItems.appendChild(li)
 
     const deleteBtn = document.createElement('button')
-    deleteBtn.textContent = "delete"
+    deleteBtn.textContent = "X"
     deleteBtn.style.marginLeft = "10px"
 
     deleteBtn.addEventListener('click', () => {
@@ -29,7 +29,12 @@ function renderArray(){
         localStorage.setItem('storedItems', JSON.stringify(items));
         renderArray()
     })
-    displayedItems.appendChild(deleteBtn)
+    // displayedItems.appendChild(deleteBtn)
+
+    const listItem = document.createElement('div')
+    listItem.appendChild(li)
+    listItem.appendChild(deleteBtn)
+    displayedItems.appendChild(listItem)
 })
 }
 
