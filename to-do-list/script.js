@@ -15,6 +15,10 @@ function renderArray(){
     const li = document.createElement('li');
     li.textContent = item.title;
     displayedItems.appendChild(li)
+
+    const deleteBtn = document.createElement('button')
+    deleteBtn.textContent = "delete"
+    deleteBtn.style.marginLeft = "10px"
 })
 }
 
